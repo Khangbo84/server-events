@@ -308,25 +308,41 @@ box-shadow:
    HERO ALIGN
 ================================ */
 .hero{
+  position:relative;
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:14px;
   padding:80px 20px;
+  min-height:320px; /* đảm bảo hero có chiều cao để bg hiển thị */
 }
-.hero img{
+
+/* Ensure only the non-background image (logo) gets the small width.
+   This prevents the .hero-bg from inheriting the small size. */
+.hero > img:not(.hero-bg){
   width:120px;
   margin-bottom:24px;
+  display:block;
 }
-  /* IMG làm nền */
+
+/* Ensure content sits above the background */
+.hero > :not(.hero-bg){
+  position:relative;
+  z-index:1;
+}
+
+/* Background image that fills the hero area */
 .hero-bg{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* quan trọng */
-  z-index: 0;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;     /* giữ tỉ lệ và phủ đầy khung */
+  object-position:center; /* canh giữa ảnh (tránh bị dồn trái) */
+  z-index:0;
+  display:block;
 }
+  
 
 /* ===== SECTION ===== */
 .section{
@@ -345,7 +361,42 @@ box-shadow:
 }
 
 .section h2{
-  font-size:44px;
+  font-si.hero{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  padding:80px 20px;
+  min-height:320px; /* đảm bảo hero có chiều cao để bg hiển thị */
+}
+
+/* Ensure only the non-background image (logo) gets the small width.
+   This prevents the .hero-bg from inheriting the small size. */
+.hero > img:not(.hero-bg){
+  width:120px;
+  margin-bottom:24px;
+  display:block;
+}
+
+/* Ensure content sits above the background */
+.hero > :not(.hero-bg){
+  position:relative;
+  z-index:1;
+}
+
+/* Background image that fills the hero area */
+.hero-bg{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;     /* giữ tỉ lệ và phủ đầy khung */
+  object-position:center; /* canh giữa ảnh (tránh bị dồn trái) */
+  z-index:0;
+  display:block;
+}
+ze:44px;
   font-weight:800;
   text-transform:uppercase;
 }
