@@ -18,20 +18,7 @@
   --dungeon:#e28b2d;
   --accent:#0f172a;
 }
-/* PLAY */
-.btn-play{
-  --btn-bg: linear-gradient(
-    180deg,
-    #ffd6e8 0%,
-    #ff9ec9 45%,
-    #ff6fb1 100%
-  );
-  --btn-text:  #7a0f3c;
-  text-shadow: 1px 1px 0 #ffffff;
 
-  --btn-shadow: #c43b7c;  /* đậm hơn */
-  --btn-light:  #ffffff;  /* sáng hơn */
-}
 /* ===== HEADER ===== */
 .header{
   position:fixed;
@@ -193,8 +180,8 @@ a{
   letter-spacing:1px;
   text-transform:uppercase;
 
-  background:var(--btn-bg, #ddd);
-  color:var(--btn-text, #000);
+  background:var(--btn-bg);
+  color:var(--btn-text);
 
   border:none;
   border-radius:6px;
@@ -203,8 +190,8 @@ a{
   user-select:none;
 
   box-shadow:
-    -4px -4px 0 var(--btn-light, #fff),
-     4px  4px 0 var(--btn-shadow, #999);
+    -4px -4px 0 var(--btn-light),
+     4px  4px 0 var(--btn-shadow);
 
   transition:none;
 }
