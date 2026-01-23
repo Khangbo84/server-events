@@ -296,7 +296,10 @@ box-shadow:
 }
 
 /* DISCORD */
-.btn-discord{
+  .btn-discord{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   --btn-bg:     #5046e5;
   --btn-text:   #ffffff;
 
@@ -304,53 +307,34 @@ box-shadow:
   --btn-light:  #7c74ed;
 }
 
+.btn-discord img{
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0; /* CỰC QUAN TRỌNG */
+}
+
 /* ===============================
    HERO ALIGN
 ================================ */
-/* Make hero a positioned container so the absolute background image is relative to it */
 .hero{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:14px;
-  padding:80px 20px;
-  min-height:320px; /* đảm bảo hero có chiều cao để bg hiển thị */
-  background-color:var(--hero-bg); /* vùng "letterbox" khi ảnh bị chứa */
-  justify-content:center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
-/* Ensure only the non-background image (logo) gets the small width.
-   This prevents the .hero-bg from inheriting the small size. */
-.hero > img:not(.hero-bg){
-  width:120px;
-  margin-bottom:24px;
-  display:block;
-}
-
-/* Ensure content sits above the background */
-.hero > :not(.hero-bg){
-  position:relative;
-  z-index:1;
-}
-
-/* Background image that shows the whole image (contain) */
 .hero-bg{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:contain;     /* show entire image without cropping */
-  object-position:center; /* canh giữa ảnh (tránh dồn sang trái) */
-  z-index:0;
-  display:block;
-  background-color:transparent;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* QUAN TRỌNG */
+  z-index: 0;
 }
 
-/* If you want the hero to always size to the image aspect ratio,
-   you can optionally set an aspect-ratio here (uncomment & set ratio).
-   Example for 16:9: .hero { aspect-ratio: 16 / 9; min-height: auto; } */
-
+.hero-content{
+  position: relative;
+  z-index: 1;
+}
 /* ===== SECTION ===== */
 .section{
   padding:80px clamp(15px, 5vw, 10%);
@@ -704,9 +688,18 @@ box-shadow:
 <!-- HERO -->
 <section class="hero">
   <img class="hero-bg" src="server_bg.png" alt="">
+  <section class="hero">
+  <img class="hero-bg" src="bg.jpg" alt="">
+  
+  <div class="hero-content">
+    <!-- Logo, Discord, nút Chơi -->
   <img src="logo.png" alt="Logo">
-  <a class="btn btn-discord" href="#">Discord</a>
+  <a class="btn-discord">
+  <img src="discord.png">
+  <span>DISCORD</span>
+  </a>
   <a class="btn btn-play" href="#">Chơi</a>
+  </div>
 </section>
 
 <!-- Overlay -->
