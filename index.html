@@ -234,8 +234,8 @@ box-shadow:
   content:"";
   position:absolute;
   top:50%;
-  width:512px;
-  height:512px;
+  width:200px;
+  height:200px;
 
   background-size:contain;
   background-repeat:no-repeat;
@@ -250,14 +250,14 @@ box-shadow:
 
 /* Cành trái */
 .btn-play::before{
-  left:-58px;
+  left:-100px;
   background-image:url("sakura-left.png");
   transform:translateY(-50%) rotate(-4deg);
 }
 
 /* Cành phải */
 .btn-play::after{
-  right:-58px;
+  right:-100px;
   background-image:url("sakura-right.png");
   transform:translateY(-50%) rotate(4deg);
 }
@@ -273,12 +273,12 @@ box-shadow:
   }
 
   .btn-play::before{
-    left:-32px;
+    left:-50px;
     transform:translateY(-50%) rotate(-2deg);
   }
 
   .btn-play::after{
-    right:-32px;
+    right:-50px;
     transform:translateY(-50%) rotate(2deg);
     }
   }
@@ -291,6 +291,9 @@ box-shadow:
 
   --btn-shadow: #3e37bb;
   --btn-light:  #7c74ed;
+  position: relative;
+  z-index: 2;
+  }
 }
 
 /* ===============================
@@ -318,7 +321,7 @@ box-shadow:
 /* Ensure content sits above the background */
 .hero > :not(.hero-bg){
   position:relative;
-  z-index:1;
+  z-index:2;
 }
 
 /* Background image that fills the hero area */
