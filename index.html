@@ -210,16 +210,16 @@ a{ text-decoration:none; color:inherit; }
   display:flex;align-items:center;gap:10px;color:#ffffff;
   font-family:'Paytone One', system-ui, sans-serif;font-size:20px;
 }
-.header-logo img{ width:36px;height:36px; }
+.header-logo img{ width:64px;height:36px; }
 
 .header-nav{ display:flex; gap:22px; align-items:center; }
 .header-nav a{ display:flex; align-items:center; gap:8px; color:#ffffff; text-decoration:none; font-family:'Paytone One', system-ui, sans-serif; font-size:15px; opacity:.85; }
 .header-nav a img{ width:18px;height:18px; } .header-nav a:hover{ opacity:1; }
 
 /* ===============================
-   HERO ALIGN
+   EVENTS ALIGN
 ================================ */
-.hero{
+.events{
   position:relative;
   display:flex;
   flex-direction:column;
@@ -230,18 +230,18 @@ a{ text-decoration:none; color:inherit; }
 }
 
 /* Ensure only the non-background image (logo) gets the small width. */
-.hero > img:not(.hero-bg){
+.events > img:not(.events-bg){
   width:120px;
   margin-bottom:24px;
   display:block;
 }
 /* Ensure content sits above the background */
-.hero > :not(.hero-bg){
+.events > :not(.events-bg){
   position:relative;
   z-index:100;
 }
 
-.hero-bg{
+.events-bg{
   position:absolute;
   inset:0;
   width:100%;
@@ -415,10 +415,10 @@ a{ text-decoration:none; color:inherit; }
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <img class="hero-bg" src="server_bg.png" alt="">
-  <img src="title.png" alt="Logo">
+<!-- EVENTS -->
+<section class="events">
+  <img class="events-bg" src="server_bg.png" alt="">
+  <img class ="title" src="title.png" alt="Logo">
 
   <!-- Discord button: sử dụng PNG -->
   <a class="btn btn-discord" href="#" aria-label="Discord">
