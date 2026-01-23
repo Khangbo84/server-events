@@ -220,10 +220,10 @@ a{ text-decoration:none; color:inherit; }
    EVENTS ALIGN
 ================================ */
 .events{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap:14px;
   padding:80px 20px;
   min-height:320px;
@@ -253,12 +253,12 @@ a{ text-decoration:none; color:inherit; }
 }
 .title{
   position: absolute;
-  top: 4vh;
-
-  left: 50vw;               /* 🔥 canh theo viewport */
+  top: 28px;                 /* chỉnh cao thấp tùy bạn */
+  left: 50vw;                /* canh theo viewport */
   transform: translateX(-50%);
 
-  width: 270px;
+  width: 420px;              /* ⭐ cố định */
+  max-width: 90vw;           /* phòng mobile nhỏ */
   height: auto;
 
   z-index: 100;
