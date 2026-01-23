@@ -296,10 +296,7 @@ box-shadow:
 }
 
 /* DISCORD */
-  .btn-discord{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+.btn-discord{
   --btn-bg:     #5046e5;
   --btn-text:   #ffffff;
 
@@ -307,34 +304,46 @@ box-shadow:
   --btn-light:  #7c74ed;
 }
 
-.btn-discord img{
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0; /* CỰC QUAN TRỌNG */
-}
-
 /* ===============================
    HERO ALIGN
 ================================ */
+/* Make hero a positioned container so the absolute background image is relative to it */
 .hero{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  padding:80px 20px;
+  min-height:320px; /* đảm bảo hero có chiều cao để bg hiển thị */
 }
 
+/* Ensure only the non-background image (logo) gets the small width.
+   This prevents the .hero-bg from inheriting the small size. */
+.hero > img:not(.hero-bg){
+  width:120px;
+  margin-bottom:24px;
+  display:block;
+}
+
+/* Ensure content sits above the background */
+.hero > :not(.hero-bg){
+  position:relative;
+  z-index:1;
+}
+
+/* Background image that fills the hero area */
 .hero-bg{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;   /* QUAN TRỌNG */
-  z-index: 0;
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;     /* giữ tỉ lệ và phủ đầy khung */
+  object-position:center; /* canh giữa ảnh (tránh bị dồn trái) */
+  z-index:0;
+  display:block;
 }
 
-.hero-content{
-  position: relative;
-  z-index: 1;
-}
 /* ===== SECTION ===== */
 .section{
   padding:80px clamp(15px, 5vw, 10%);
@@ -431,7 +440,7 @@ box-shadow:
 }
 .suggest-links a:hover{
   filter:brightness(1.08);
-}
+  }
 /* ===== FOOTER ===== */
 .footer{
   background:#030617;
